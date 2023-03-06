@@ -1,0 +1,5 @@
+SELECT pi.invoice_number, po.supplier_name, pi.invoice_date, pii.item_name, pii.quantity, pii.unit_price, pii.total_price
+FROM Purchase_Invoice pi
+JOIN Purchase_Order po ON pi.po_number = po.po_number
+JOIN Purchase_Order_Item pii ON po.po_number = pii.po_number
+WHERE pi.invoice_date >= '2023-03-01' AND pi.invoice_date <= '2023-03-31';
